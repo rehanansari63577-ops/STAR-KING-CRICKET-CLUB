@@ -68,6 +68,7 @@ h2{font-size:clamp(29px,4vw,42px);line-height:1.15;margin:9px 0 12px;letter-spac
 .pill{display:inline-block;border:1px solid #f6c85f88;color:var(--gold);border-radius:40px;padding:6px 15px;font-size:10px;font-weight:900;letter-spacing:2px}
 .auction-date{font-size:clamp(34px,7vw,65px);font-weight:1000;line-height:1.1;color:var(--gold);margin:18px 0 8px;letter-spacing:-1px}
 .auction-box h3{font-size:clamp(18px,3vw,25px);margin:12px 0}
+.auction-time{color:var(--gold)!important;font-size:18px;font-weight:900;letter-spacing:1px;margin:8px auto 14px!important}
 .auction-box p{color:#c3cee0;max-width:590px;margin:0 auto}
 .countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:28px 0 8px}
 .time-unit{min-width:76px;padding:12px 10px;border-radius:13px;background:#080f1d99;border:1px solid #ffffff17}
@@ -148,7 +149,7 @@ footer strong{color:var(--gold)}
  <div class="wrap stats">
   <div class="stat"><strong>01</strong><span>One Team</span></div>
   <div class="stat"><strong>One Dream</strong><span>One Goal</span></div>
-  <div class="stat"><strong>22 DEC</strong><span>Player Auction 2026</span></div>
+  <div class="stat"><strong>13 DEC</strong><span>Player Auction 2026</span></div>
  </div>
 </div>
 
@@ -191,8 +192,9 @@ footer strong{color:var(--gold)}
   <div class="section-head reveal"><div class="overline">Mark your calendar</div><h2>Big Day. New Squad. New Dreams.</h2><p>The next chapter of Star King Cricket Club begins at the player auction.</p></div>
   <div class="auction-box reveal">
    <span class="pill">✦ UPCOMING EVENT ✦</span>
-   <div class="auction-date">22 DECEMBER 2026</div>
+   <div class="auction-date">13 DECEMBER 2026</div>
    <h3>STAR KING PLAYER AUCTION</h3>
+   <p class="auction-time">🕚 START TIME: 11:00 AM</p>
    <p>New players. New combinations. One Star King family. The official squad details will be shared after the auction.</p>
    <div class="countdown" aria-label="Countdown to player auction">
     <div class="time-unit"><strong id="days">--</strong><span>Days</span></div>
@@ -200,14 +202,14 @@ footer strong{color:var(--gold)}
     <div class="time-unit"><strong id="minutes">--</strong><span>Minutes</span></div>
     <div class="time-unit"><strong id="seconds">--</strong><span>Seconds</span></div>
    </div>
-   <p class="small-note" id="countdownNote">Countdown to 22 December 2026. Event time has not been announced.</p>
+   <p class="small-note" id="countdownNote">Countdown to 13 December 2026. Auction starts at 11:00 AM.</p>
   </div>
  </div>
 </section>
 
 <section id="players">
  <div class="wrap">
-  <div class="section-head reveal"><div class="overline">The squad</div><h2>Meet The Players</h2><p>Player names, photos and roles will be added after the 22 December 2026 auction.</p></div>
+  <div class="section-head reveal"><div class="overline">The squad</div><h2>Meet The Players</h2><p>Player names, photos and roles will be added after the 13 December 2026 auction.</p></div>
   <div class="player-panel">
    <article class="card player-placeholder reveal"><div class="player-symbol">🏏</div><div><h3>Squad Announcement</h3><p>Official player list coming soon.</p></div></article>
    <article class="card player-placeholder reveal"><div class="player-symbol">⭐</div><div><h3>Player Profiles</h3><p>Player photos and roles coming soon.</p></div></article>
@@ -247,8 +249,8 @@ navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
  navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';
 }));
 
-// The auction date is known; no event time has been supplied, so the countdown uses midnight.
-const target=new Date(2026,11,22,0,0,0).getTime();
+// Auction: 13 December 2026 at 11:00 AM.
+const target=new Date(2026,11,13,11,0,0).getTime();
 function updateCountdown(){
  const diff=target-Date.now();
  const note=document.getElementById('countdownNote');
